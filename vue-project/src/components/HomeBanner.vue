@@ -3,7 +3,7 @@
 <header>
     <nav class="desktop-nav">
         <div class="logoPrenom">
-        <router-link to="/">
+        <router-link to="/home">
             <img src="../assets/logo.png" alt="logo du site" class="logo">
             <h1>Jérémy</h1>
         </router-link>
@@ -22,13 +22,13 @@
 
 
             <!-- MOBILE NAV -->
-    <nav class="mobile-nav" :style="{background :navBackground }">
+    <nav class="mobile-nav" >
         <div class="top-nav">
-            <router-link to="/">
+            <router-link to="/home">
                 <img src="../assets/Logo.png" alt="logo du site" class="mobile-logo">
             </router-link>
             <button v-if="!mobileNavIsOpen" @click="mobileNavIsOpen = true" class="hamb-button"><img src="../assets/hamb.png" alt=""></button>
-            <button v-else @click="mobileNavIsOpen = false" class="hamb-button"><img src="../assets/x.png" alt=""></button>
+            <button v-else @click="mobileNavIsOpen = false" ><img src="../assets/x.png" alt=""></button>
         </div>
             <Transition>
            <div  v-if="mobileNavIsOpen" class="main-links">
@@ -104,6 +104,7 @@ export default {
   .mobile-logo {
   height: 3rem;
 }
+
 }
 
 .desktop-nav {
@@ -111,7 +112,7 @@ export default {
     width: 100%;
     max-width: 1280px;
     margin: 2rem auto;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
    
